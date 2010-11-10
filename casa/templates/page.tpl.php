@@ -135,67 +135,44 @@
         <div id="casa_popular_posts">
 
         <div id="slideshow">
-
+           <?php print render($page['highlight']); ?>
         </div> <!-- end of slide show -->
 
    	  </div> <!-- end of casa_popular_posts -->
 
         <div id="casa_main_content_outter">
-
-        	<div id="casa_main_content_inner">
-
-            	<div id="casa_main_column">
-
-
-
-
-                    </div> <!-- end of a node section two -->
-
-                <div class="cleaner"></div>
+            <div id="casa_main_content_inner">
+                <div id="casa_main_column">
+                     <?php print $breadcrumb; ?>
+      <a id="main-content"></a>
+      <?php print render($title_prefix); ?>
+      <?php if ($title): ?>
+        <h1 class="title" id="page-title"><?php print $title; ?></h1>
+      <?php endif; ?>
+      <?php print render($title_suffix); ?>
+      <?php print $messages; ?>
+      <?php if ($tabs): ?>
+        <div class="tabs"><?php print render($tabs); ?></div>
+      <?php endif; ?>
+      <?php print render($page['help']); ?>
+      <?php if ($action_links): ?>
+        <ul class="action-links"><?php print render($action_links); ?></ul>
+      <?php endif; ?>
+      <?php print render($page['content']); ?>
+      <?php print $feed_icons; ?>
                 </div>
 
+            </div>
 
-
-            <div class="cleaner"></div>
-            </div> <!-- end of casa_main_content_inner -->
-
-        	<div class="cleaner"></div>
-        </div> <!-- end of casa_main_content_outter -->
-
+        </div>
         <div id="casa_side_column_02">
-
-        	<div class="side_column_02_section">
-
-                <div class="side_column_02_section_content">
-            		<div>
-
-
-                    <div class="margin_bottom_20"></div>
-
-
-
+            <div class="side_column_02_section">
+        <?php print render($page['sidebar']); ?>
                 </div>
+    </div>
 
-            </div>
-
-            <div class="side_column_02_section">
-
-
-            </div>
-
-            <div class="side_column_02_section">
-
-
-            </div>
-
-    </div> <!-- end of delete_side_column_02 -->
-
-
-        <div class="cleaner"></div>
-    </div> <!-- end of delete_content -->
-
-
-</div>
+ </div> <!-- end of casa_content -->
+</div>  <!-- end of casa_content_wrapper -->
 
 <div id="casa_footer_wrapper_outter">
 
@@ -242,24 +219,8 @@
   <div id="main-wrapper"><div id="main" class="clearfix<?php if ($main_menu || $page['navigation']) { print ' with-navigation'; } ?>">
 
     <div id="content" class="column"><div class="section">
-      <?php print render($page['highlight']); ?>
-      <?php print $breadcrumb; ?>
-      <a id="main-content"></a>
-      <?php print render($title_prefix); ?>
-      <?php if ($title): ?>
-        <h1 class="title" id="page-title"><?php print $title; ?></h1>
-      <?php endif; ?>
-      <?php print render($title_suffix); ?>
-      <?php print $messages; ?>
-      <?php if ($tabs): ?>
-        <div class="tabs"><?php print render($tabs); ?></div>
-      <?php endif; ?>
-      <?php print render($page['help']); ?>
-      <?php if ($action_links): ?>
-        <ul class="action-links"><?php print render($action_links); ?></ul>
-      <?php endif; ?>
-      <?php print render($page['content']); ?>
-      <?php print $feed_icons; ?>
+     
+     
     </div></div> <!-- /.section, /#content -->
 
     <?php if ($page['navigation'] || $main_menu): ?>
