@@ -182,16 +182,16 @@
 
 
             <div class="section_w200">
-
+<?php print render($page['footer_one']); ?>
           </div>
 
             <div class="section_w200">
-
+<?php print render($page['footer_two']); ?>
 
             </div>
 
             <div class="section_w200">
-
+<?php print render($page['footer_three']); ?>
 
             </div>
 
@@ -208,56 +208,4 @@
 
 </div> <!-- end of casa_footer_wrapper_outter -->
 
-<div id="page-wrapper"><div id="page">
 
-  <div id="header"><div class="section clearfix">
-
-
-
-  </div></div> <!-- /.section, /#header -->
-
-  <div id="main-wrapper"><div id="main" class="clearfix<?php if ($main_menu || $page['navigation']) { print ' with-navigation'; } ?>">
-
-    <div id="content" class="column"><div class="section">
-     
-     
-    </div></div> <!-- /.section, /#content -->
-
-    <?php if ($page['navigation'] || $main_menu): ?>
-      <div id="navigation"><div class="section clearfix">
-
-
-
-      </div></div> <!-- /.section, /#navigation -->
-    <?php endif; ?>
-
-    <?php print render($page['sidebar_first']); ?>
-
-    <?php print render($page['sidebar_second']); ?>
-
-  </div></div> <!-- /#main, /#main-wrapper -->
-
-  <?php if ($page['footer'] || $secondary_menu): ?>
-    <div id="footer"><div class="section">
-
-      <?php print theme('links__system_secondary_menu', array(
-        'links' => $secondary_menu,
-        'attributes' => array(
-          'id' => 'secondary-menu',
-          'class' => array('links', 'clearfix'),
-        ),
-        'heading' => array(
-          'text' => t('Secondary menu'),
-          'level' => 'h2',
-          'class' => array('element-invisible'),
-        ),
-      )); ?>
-
-      <?php print render($page['footer']); ?>
-
-    </div></div> <!-- /.section, /#footer -->
-  <?php endif; ?>
-
-</div></div> <!-- /#page, /#page-wrapper -->
-
-<?php print render($page['bottom']); ?>
