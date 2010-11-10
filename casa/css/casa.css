@@ -49,6 +49,9 @@ img { margin: 0px; padding: 0px; border: none; }
 	background: #94591a;
 	color: #ffffff;
 }
+#page-title{
+    display: none;
+}
 
 h1 {
 	margin: 0px;
