@@ -67,12 +67,15 @@
  * @see template_process()
  */
 ?>
+<div id="casa_site_title_bar_wrapper_outter">
 
-<div id="page-wrapper"><div id="page">
+    <div id="casa_site_title_bar_wrapper_inner">
 
-  <div id="header"><div class="section clearfix">
+    	<div id="casa_site_title_bar">
 
-    <?php if ($logo): ?>
+        	<div id="casa_site_title_bar_top">
+                <div id="site_title">
+                     <?php if ($logo): ?>
       <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
     <?php endif; ?>
 
@@ -97,6 +100,142 @@
     <?php endif; ?>
 
     <?php print render($page['header']); ?>
+                </div>
+
+
+			</div> <!-- end of casa_site_title_bar_top -->
+
+            <div id="casa_menu">
+             <?php print theme('links__system_main_menu', array(
+          'links' => $main_menu,
+          'attributes' => array(
+            'id' => 'main-menu',
+            'class' => array('links', 'clearfix'),
+          ),
+          'heading' => array(
+            'text' => t('Main menu'),
+            'level' => 'h2',
+            'class' => array('element-invisible'),
+          ),
+        )); ?>
+
+        <?php print render($page['navigation']); ?>
+            </div> <!-- end of menu -->
+
+        </div> <!-- end of casa_site_title_bar -->
+
+    </div> <!-- end of casa_site_title_bar_wrapper_inner -->
+
+</div> <!-- end of casa_site_title_bar_wrapper_outter -->
+
+<div id="casa_content_wrapper">
+
+	<div id="casa_content">
+
+        <div id="casa_popular_posts">
+
+        <div id="slideshow">
+
+        </div> <!-- end of slide show -->
+
+   	  </div> <!-- end of casa_popular_posts -->
+
+        <div id="casa_main_content_outter">
+
+        	<div id="casa_main_content_inner">
+
+            	<div id="casa_main_column">
+
+
+
+
+                    </div> <!-- end of a node section two -->
+
+                <div class="cleaner"></div>
+                </div>
+
+
+
+            <div class="cleaner"></div>
+            </div> <!-- end of casa_main_content_inner -->
+
+        	<div class="cleaner"></div>
+        </div> <!-- end of casa_main_content_outter -->
+
+        <div id="casa_side_column_02">
+
+        	<div class="side_column_02_section">
+
+                <div class="side_column_02_section_content">
+            		<div>
+
+
+                    <div class="margin_bottom_20"></div>
+
+
+
+                </div>
+
+            </div>
+
+            <div class="side_column_02_section">
+
+
+            </div>
+
+            <div class="side_column_02_section">
+
+
+            </div>
+
+    </div> <!-- end of delete_side_column_02 -->
+
+
+        <div class="cleaner"></div>
+    </div> <!-- end of delete_content -->
+
+
+</div>
+
+<div id="casa_footer_wrapper_outter">
+
+	<div id="casa_footer_wrapper_inner">
+
+    	<div id="casa_footer">
+
+
+            <div class="section_w200">
+
+          </div>
+
+            <div class="section_w200">
+
+
+            </div>
+
+            <div class="section_w200">
+
+
+            </div>
+
+            <div class="section_w200">
+
+            </div>
+
+        	<div class="cleaner"></div>
+        </div> <!-- end of casa_footer -->
+
+    	<div class="cleaner"></div>
+    </div> <!-- end of casa_footer_wrapper_inner -->
+
+
+</div> <!-- end of casa_footer_wrapper_outter -->
+
+<div id="page-wrapper"><div id="page">
+
+  <div id="header"><div class="section clearfix">
+
+
 
   </div></div> <!-- /.section, /#header -->
 
@@ -126,20 +265,7 @@
     <?php if ($page['navigation'] || $main_menu): ?>
       <div id="navigation"><div class="section clearfix">
 
-        <?php print theme('links__system_main_menu', array(
-          'links' => $main_menu,
-          'attributes' => array(
-            'id' => 'main-menu',
-            'class' => array('links', 'clearfix'),
-          ),
-          'heading' => array(
-            'text' => t('Main menu'),
-            'level' => 'h2',
-            'class' => array('element-invisible'),
-          ),
-        )); ?>
 
-        <?php print render($page['navigation']); ?>
 
       </div></div> <!-- /.section, /#navigation -->
     <?php endif; ?>
